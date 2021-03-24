@@ -8,10 +8,14 @@ The goal is to associate Spotify artists with a geolocation. The current Spotify
 
 ## Project Plan
 * Front End Form
-    * Accepts an Aritst Id + location
+    * Accepts an Aritst Id
     * Verify Artist ID + confirm Artist Name wih User
+    * Check if that Artist exists in the DB already and if so display the existing location data.
+    * Add new or edit Artist location
+    * Admin controls - TBD 
 * Artist Information
-    * How much data can we store and deliver back to the user?
+    * Can we store and deliver back artist data? 
+    * 
 * Location format
     * Input format:
     * Storage format:
