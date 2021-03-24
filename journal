@@ -2,11 +2,20 @@ a space for notes, or whatever...
 
 Tues 3/23; First Team Meeting
 
-Worked to try to figure out what the team was really doing, trying to get one person’s idea into an understandable and workable solution brings challenges.  We discussed what we wanted the end results to be and tried to create our project plan.  My understanding of the current scope of the project is that the client will provide a spotify artist ID, which the client must already have.  Our service will allow the client to input a location, we will consume/call the geonames api to get a long and lat for that location,(not zipcode to allow for international locations), and add that information to a database along with artist id. The end  user will then be able to access the artists’s location based on the artist’s id(or name??).
+(HK)Worked to try to figure out what the team was really doing, trying to get one person’s idea into an understandable and workable solution brings challenges.  We discussed what we wanted the end results to be and tried to create our project plan.  My understanding of the current scope of the project is that the client will provide a spotify artist ID, which the client must already have.  Our service will allow the client to input a location, we will consume/call the geonames api to get a long and lat for that location,(not zipcode to allow for international locations), and add that information to a database along with artist id. The end  user will then be able to access the artists’s location based on the artist’s id(or name??).
 We will need to create an AWS instance, make a database, and user guide.
 •	We are unsure about the legal implications of taking in data from spotify and putting it out slightly modified.
 •	Will we verify the information provided or is that for…??
 •	Rate limiting concerns, Need to recreate status codes for when the service is down, 429?
 •	We will first need to verify that the spotify artists id is ok/can we get a true response?
 •	Need to decide what info to put into the database, long and lat?
+    -project deliverables states that it can be a web service OR library, what would a library of this look like??
 
+Deliverable from Rubric:
+ The product must be a significant web service or reusable library that could be used in the Individual Projects for this course.
+Problem statement, project objectives, and project plan (detailed schedule for the project). Must be approved by the instructor.
+Regular (minimum of weekly) time log/journal/blog/wiki entries documenting progress, obstacles, findings, learning points. Although commit logs will show who did what, please also include this information at a high level in the progress log.
+Source code, HTML JavaDoc and all supporting materials published on GitHub.
+User documentation for the targeted end users published publicly. For web services, this consumer guide should be located on one or more web pages at the same location as the hosted service.
+If the application is a web service, deploy the service to a publicly accessible location, i.e., host on AWS.
+Presentation of the progress and finished product to the class.
