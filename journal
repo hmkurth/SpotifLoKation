@@ -41,6 +41,9 @@ Fri 3/26 Slack Discussion :
                        differences between numeric types. Decent indices will have a far greater effect.
                          geolat - Float (10,6)
                       geolng - Float (10,6)
+    added meta-inf, context.xml(will need to update the db name when created), and my POM file(you may have to tweak for your machines), deployment setup.
+     I was looking at some documentation generators, not sure if that's necessary, but it looks relatively simple..https://my.miredot.com/dashboard/
+
 
 
 
