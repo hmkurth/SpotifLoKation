@@ -2,7 +2,13 @@ a space for notes, or whatever...
 
 Tues 3/23; First Team Meeting
 
-(HK)Worked to try to figure out what the team was really doing, trying to get one person’s idea into an understandable and workable solution brings challenges.  We discussed what we wanted the end results to be and tried to create our project plan.  My understanding of the current scope of the project is that the client will provide a spotify artist ID, which the client must already have.  Our service will allow the client to input a location, we will consume/call the geonames api to get a long and lat for that location,(not zipcode to allow for international locations), and add that information to a database along with artist id. The end  user will then be able to access the artists’s location based on the artist’s id(or name??).
+(HK)Worked to try to figure out what the team was really doing, trying to get one person’s idea into an understandable
+ and workable solution brings challenges.
+We discussed what we wanted the end results to be and tried to create our project plan.  My understanding of the current
+ scope of the project is that the client will provide a spotify artist ID, which the client must already have.  Our service
+  will allow the client to input a location, we will consume/call the geonames api to get a long and lat for that location,
+  (not zipcode to allow for international locations), and add that information to a database along with artist id.
+  The end  user will then be able to access the artists’s location based on the artist’s id(or name??).
 We will need to create an AWS instance, make a database, and user guide.
 •	We are unsure about the legal implications of taking in data from spotify and putting it out slightly modified.
 •	Will we verify the information provided or is that for…??
@@ -11,7 +17,37 @@ We will need to create an AWS instance, make a database, and user guide.
 •	Need to decide what info to put into the database, long and lat?
     -project deliverables states that it can be a web service OR library, what would a library of this look like??
 
-Deliverable from Rubric:
+
+
+Fri 3/26 Slack Discussion :
+    Kaitlyn Harsla  3:39 PM
+    Also,  Looking into this if we want to have the option of adding a location for any location globally,
+    I think the best thing is latitude and longitute. Its a quick google search for a user. Also, how are we
+    going to handle situations where a user tries to add a location for an artist that already has a location
+    attached to it (we probably aren't at this step yet but should be something we think about while developing)?
+
+    (Hk) Data Storage- 6
+
+                       You could use MySQL's spatial extensions with GIS.
+
+                       In a code example from Google displaying points on a map, they state:
+
+                       When you create the MySQL table, you want to pay particular attention to the lat and lng attributes.
+                       With the current zoom capabilities of Google Maps, you should only need 6 digits of precision after the decimal.
+
+                       To keep the storage space required for our table at a minimum, you can specify that the lat and lng
+                        attributes are floats of size (10,6). That will let the fields store 6 digits after the decimal,
+                       plus up to 4 digits before the decimal, e.g. -123.456789 degrees I wouldn't worry about performance
+                       differences between numeric types. Decent indices will have a far greater effect.
+                         geolat - Float (10,6)
+                      geolng - Float (10,6)
+
+
+
+
+
+Deliverables from Rubric:
+
  The product must be a significant web service or reusable library that could be used in the Individual Projects for this course.
 Problem statement, project objectives, and project plan (detailed schedule for the project). Must be approved by the instructor.
 Regular (minimum of weekly) time log/journal/blog/wiki entries documenting progress, obstacles, findings, learning points. Although commit logs will show who did what, please also include this information at a high level in the progress log.
