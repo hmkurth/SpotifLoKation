@@ -4,7 +4,13 @@
 The goal is to associate Spotify artists with a geolocation. The current Spotify API does not provide the location for their artist data. This application seeks to crowdsource this information and provide an API service for artist location information.  
 
 ## Project Objectives
-... 
+MVP: 
+* Front end form for collecting data
+  * Artist
+  * Location (String)
+* Persistant storage in MySQL db
+* REST Service for serving back data
+* Documentation + Presentation Materials
 
 ## Project Plan
 * Front End Form
@@ -12,14 +18,40 @@ The goal is to associate Spotify artists with a geolocation. The current Spotify
     * Verify Artist ID + confirm Artist Name wih User
     * Check if that Artist exists in the DB already and if so display the existing location data.
     * Add new or edit Artist location
-    * Admin controls - TBD 
+    * Admin controls - V.Next
 * Artist Information
-    * Can we store and deliver back artist data? 
-    * 
-* Location format
-    * Input format:
-    * Storage format:
+    * Store Id + Name - MVP
+    * Consume full Spotify artist info - V.Next
+* Location Information
+    * City-level granularity
+    * String - MVP 
+    * Lat/Lng - V.Next
 * Persist collected information
     * DB table
-* API Service
+    * ARTIST:  | id | artistName | locationId |
+    * LOCATION:  | id | country | region | city |
+* API Services Used
+  * Spotify
+  * TBD
 * Deploy to AWS
+
+
+| Week | Objectives | Assignee | Notes| Accomplished |
+|------|------|-------|------|------|
+| 1 | Project Planning |Everyone| | Y |
+| 1 | Set Git Repo| SL | {git location here} | Y |
+| 1 | Main Package Dir./ Local deployment | HK | | Y |
+| 1 | Local MySQL Db Set Up | HK | Commit script in project folder | |
+| 1 | Configure Hibernate | HK | | |
+| 1 | DAO | KH | | |
+| 1 | Entities | KH | | |
+| 1 | Tests - CRUD | SL | | |
+| 1 | Basic JSPs + Controllers | SL | | |
+| 2 | Consume Spotify API / Logic | SL | | |
+| 2 | REST Service - Hard Coded | | | |
+| 2 | REST Service - Live Data | | | |
+| 2 | Deploy to AWS | | | |
+| 3 | Bootstrap / CSS styling | | | |
+| 3 | Project Documentation | | | |
+| 3 | Presentation Prep | | | |
+
