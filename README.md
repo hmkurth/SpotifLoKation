@@ -43,8 +43,8 @@ MVP:
 | 1 | Main Package Dir./ Local deployment | HK | | Y |
 | 1 | Local MySQL Db Set Up | HK | Commit script in project folder | |
 | 1 | Configure Hibernate | HK | | |
-| 1 | DAO | KH | | |
-| 1 | Entities | KH | | |
+| 1 | DAO | KH | | Y|
+| 1 | Entities | KH | |Y|
 | 1 | Tests - CRUD | SL | | |
 | 1 | Basic JSPs + Controllers | SL | | |
 | 2 | Consume Spotify API / Logic | SL | | |
