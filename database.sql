@@ -2,8 +2,7 @@ create table artist
 (
     id          varchar(22)  not null
         primary key,
-    artist_name varchar(100) not null,
-    location_id int          not null
+    artist_name varchar(100) not null
 );
 
 create table location
