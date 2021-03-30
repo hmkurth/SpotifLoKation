@@ -1,6 +1,8 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+database.properties
+hibernate.cfg.xml
 # Datasource local storage ignored files
 /../../../../../../../:\Users\simon\JavaSpring21\IdeaProjects\shk-team-project\.idea/dataSources/
 /dataSources.local.xml
