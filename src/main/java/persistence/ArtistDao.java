@@ -71,7 +71,7 @@ public class ArtistDao {
      * @param id artist id to search by
      * @return a artist
      */
-    public Artist getById(int id) {
+    public Artist getById(String id) {
         Session session = sessionFactory.openSession();
         Artist artist = session.get(Artist.class, id);
         session.close();
