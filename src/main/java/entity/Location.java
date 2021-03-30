@@ -16,7 +16,7 @@ public class Location {
     private String country;
     private String region;
     private String city;
-    @ManyToMany(mappedBy = "projects")
+    @ManyToMany(mappedBy = "locations")
     private Set<Artist> artists = new HashSet<>();
 
     /**
