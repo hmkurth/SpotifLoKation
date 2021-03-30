@@ -19,12 +19,11 @@ public class Artist {
      *
      * @param id the artists id
      * @param artist_name  the artist's name
-     * @param location_id  the location's id
+     *
      */
     public Artist(String id, String artist_name, int location_id) {
         this.id = id;
         this.artist_name = artist_name;
-        this.location_id = location_id;
     }
 
     /**
@@ -59,29 +58,12 @@ public class Artist {
     public void setArtist_name(String artist_name) {
         this.artist_name = artist_name;
     }
-    /**
-     * Gets id of artists location
-     *
-     * @return the artist's location as id
-     */
-    public int getLocation_id() {
-        return location_id;
-    }
-    /**
-     * Sets the artist location as id
-     *
-     * @param location_id the artists location
-     */
-    public void setLocation_id(int location_id) {
-        this.location_id = location_id;
-    }
 
     @Override
     public String toString() {
         return "Artist{" +
                 "id='" + id + '\'' +
                 ", artist_name='" + artist_name + '\'' +
-                ", location_id=" + location_id +
                 '}';
     }
 }
