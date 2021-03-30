@@ -54,3 +54,6 @@ aws.properties
 #
 spotifyAPI.properties
 awsCredentials.properties
+
+#Just for personal use/ testing
+/hibernate.cfg.xml
