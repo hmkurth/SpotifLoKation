@@ -1,12 +1,26 @@
 package entity;
 
 
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * A class to represent an Artist.
  */
+@Entity(name="Artist")
+@Table(name="artist")
 public class Artist {
+    @Id
     private String id;
     private String artist_name;
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "artist_location",
+            joinColumns = { @JoinColumn(name = "artist_id") },
+            inverseJoinColumns = { @JoinColumn(name = "location_id") }
+    )
+    Set<Location> locations = new HashSet<>();
     private int location_id;
 
     /**

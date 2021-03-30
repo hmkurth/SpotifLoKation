@@ -1,10 +1,23 @@
 package entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity(name="Location")
+@Table(name="location")
 public class Location {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name="native",strategy="native")
     private int id;
     private String country;
     private String region;
     private String city;
+    @ManyToMany(mappedBy = "projects")
+    private Set<Artist> artists = new HashSet<>();
 
     /**
      * Instantiates a new location.
