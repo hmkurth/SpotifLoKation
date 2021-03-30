@@ -41,8 +41,8 @@ MVP:
 | 1 | Project Planning |Everyone| | Y |
 | 1 | Set Git Repo| SL | {git location here} | Y |
 | 1 | Main Package Dir./ Local deployment | HK | | Y |
-| 1 | Local MySQL Db Set Up | HK | Commit script in project folder | |
-| 1 | Configure Hibernate | HK | | |
+| 1 | Local MySQL Db Set Up | HK | Commit script in project folder | y|
+| 1 | Configure Hibernate | HK | hibernate.cfg.xml added to main and test| |
 | 1 | DAO | KH | | Y|
 | 1 | Entities | KH | |Y|
 | 1 | Tests - CRUD | SL | | |
