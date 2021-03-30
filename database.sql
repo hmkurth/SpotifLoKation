@@ -1,24 +1,25 @@
-create table if not exists artist
+create table artist
 (
-    id varchar(22) not null
+    id          varchar(22)  not null
         primary key,
     artist_name varchar(100) not null,
-    location_id int not null
+    location_id int          not null
 );
 
-create table if not exists location
+create table location
 (
-    id int auto_increment
+    id      int auto_increment
         primary key,
     country varchar(30) not null,
-    region varchar(20) null,
-    city varchar(30) not null
+    region  varchar(20) null,
+    city    varchar(30) not null
 );
 
-create table if not exists artist_location
+create table artist_location
 (
-    artist_id varchar(22) not null,
-    location_id int not null,
+    artist_id   varchar(22) not null,
+    location_id int         not null,
+    primary key (artist_id, location_id),
     constraint artist_location_artist_id_uindex
         unique (artist_id),
     constraint artist_location_location_id_uindex
@@ -31,7 +32,4 @@ create table if not exists artist_location
             on update cascade on delete cascade
 )
     comment 'join';
-
-alter table artist_location
-    add primary key (location_id);
 
