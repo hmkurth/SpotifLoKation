@@ -58,3 +58,5 @@ awsCredentials.properties
 #Just for personal use/ testing
 hibernate.cfg.xml
 log4j2.properties
+database.properties
+
