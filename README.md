@@ -48,9 +48,9 @@ MVP:
 | 1 | Tests - CRUD | SL | | |
 | 1 | Basic JSPs + Controllers | SL | | |
 | 2 | Consume Spotify API / Logic | SL | | |
-| 2 | REST Service - Hard Coded | | | |
-| 2 | REST Service - Live Data | | | |
-| 2 | Deploy to AWS | | | |
+| 2 | REST Service - Hard Coded | KH | | |
+| 2 | REST Service - Live Data | SL | | |
+| 2 | Deploy to AWS | HK | Wait on application flow | |
 | 3 | Bootstrap / CSS styling | | | |
 | 3 | Project Documentation | | | |
 | 3 | Presentation Prep | | | |
