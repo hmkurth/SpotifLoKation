@@ -1,6 +1,7 @@
 package com.shk.persistence;
 
 import com.shk.entity.Artist;
+import com.shk.entity.Location;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import test.util.Database;
 
 import java.util.List;
+import java.util.Set;
 
 class ArtistDaoTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -62,4 +64,20 @@ class ArtistDaoTest {
         assert(retrievedArtist.getArtist_name().equals("Good Grief"));
 
     }
+
+    @Test
+    void getArtistLocations() {
+        String id = "5L3STwlqP4cN3E9rMWES48";
+        Artist artist = dao.getById(id);
+        Set<Location> locations = artist.getLocations();
+        assert(locations.size() == 2);
+        
+    }
+
+    @Test
+    void deleteArtistLocation() {
+
+    }
+
+
 }
