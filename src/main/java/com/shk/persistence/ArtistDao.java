@@ -45,11 +45,11 @@ public class ArtistDao {
      * @param artist artist to be inserted
      * @return id of artist inserted
      */
-    public int insert(Artist artist) {
-        int id = 0;
+    public String insert(Artist artist) {
+        String id;
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        id = (int)session.save(artist);
+        id = (String)session.save(artist);
         transaction.commit();
         session.close();
         return id;
