@@ -35,7 +35,7 @@ public class Artist {
      * @param artist_name  the artist's name
      *
      */
-    public Artist(String id, String artist_name, int location_id) {
+    public Artist(String id, String artist_name) {
         this.id = id;
         this.artist_name = artist_name;
     }
