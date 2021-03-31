@@ -16,7 +16,7 @@ public class Artist {
     private String artist_name;
 
 
-    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    @ManyToMany(/*cascade = { CascadeType.ALL },*/ fetch = FetchType.EAGER)
     @JoinTable(
             name = "artist_location",
             joinColumns = { @JoinColumn(name = "artist_id") },

@@ -27,8 +27,8 @@ public class Location {
     /**
      * Instantiates a new location.
      */
-    public Location(int id, String country, String region, String city) {
-        this.id = id;
+    public Location(String country, String region, String city) {
+
         this.country = country;
         this.region = region;
         this.city = city;
