@@ -16,7 +16,7 @@ public class Location {
     private String country;
     private String region;
     private String city;
-    @ManyToMany(mappedBy = "locations")
+    @ManyToMany(mappedBy = "locations", fetch = FetchType.EAGER)
     private Set<Artist> artists = new HashSet<>();
 
     /**
@@ -33,6 +33,21 @@ public class Location {
         this.region = region;
         this.city = city;
     }
+
+    /**
+     * @return
+     */
+    public Set<Artist> getArtists() {
+        return artists;
+    }
+
+    /**
+     * @param artists
+     */
+    public void setArtists(Set<Artist> artists) {
+        this.artists = artists;
+    }
+
     /**
      * Gets id.
      *
@@ -107,4 +122,6 @@ public class Location {
                 ", city='" + city + '\'' +
                 '}';
     }
+
+
 }
