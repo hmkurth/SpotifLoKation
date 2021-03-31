@@ -95,4 +95,23 @@ public class Artist {
                 ", artist_name='" + artist_name + '\'' +
                 '}';
     }
+
+    /**
+     * Adds a location to the Artist's set of locations
+     * @param location
+     */
+    public void addLocation(Location location) {
+        this.locations.add(location);
+        location.getArtists().add(this);
+
+    }
+
+    /**
+     * Removes a location from the Artist's set of locations
+     * @param location
+     */
+    public void removeLocation(Location location) {
+        this.locations.remove(location);
+        location.getArtists().remove(this);
+    }
 }
