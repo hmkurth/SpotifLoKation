@@ -1,4 +1,4 @@
-package entity;
+package com.shk.entity;
 
 
 import javax.persistence.*;
@@ -21,7 +21,7 @@ public class Artist {
             inverseJoinColumns = { @JoinColumn(name = "location_id") }
     )
     Set<Location> locations = new HashSet<>();
-    private int location_id;
+
 
     /**
      * Instantiates a new Artist.

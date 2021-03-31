@@ -1,4 +1,4 @@
-package entity;
+package com.shk.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 

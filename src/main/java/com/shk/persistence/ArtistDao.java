@@ -1,6 +1,6 @@
-package persistence;
+package com.shk.persistence;
 
-import entity.Location;
+import com.shk.entity.Artist;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,71 +10,71 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-public class LocationDao {
+public class ArtistDao {
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
     /**
-     * Gets all locations
+     * Gets all artists
      *
-     * @return the list of all locations
+     * @return the list of all artists
      */
-    public List<Location> getAllLocations() {
+    public List<Artist> getAllArtists() {
         Session session = sessionFactory.openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Location> query = builder.createQuery(Location.class);
-        Root<Location> root = query.from(Location.class);
-        List<Location> locations = session.createQuery(query).getResultList();
+        CriteriaQuery<Artist> query = builder.createQuery(Artist.class);
+        Root<Artist> root = query.from(Artist.class);
+        List<Artist> artists = session.createQuery(query).getResultList();
         session.close();
-        return locations;
+        return artists;
     }
 
     /**
-     * update location
-     * @param location location to be updated
+     * update artist
+     * @param artist artist to be updated
      */
-    public void update(Location location) {
+    public void update(Artist artist) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.update(location);
+        session.update(artist);
         transaction.commit();
         session.close();
     }
 
     /**
-     * insert location
-     * @param location location to be inserted
-     * @return id of location inserted
+     * insert artist
+     * @param artist artist to be inserted
+     * @return id of artist inserted
      */
-    public int insert(Location location) {
+    public int insert(Artist artist) {
         int id = 0;
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        id = (int)session.save(location);
+        id = (int)session.save(artist);
         transaction.commit();
         session.close();
         return id;
     }
 
     /**
-     * Delete a Location
-     * @param location location to be deleted
+     * Delete an Artist
+     * @param artist artist to be deleted
      */
-    public void delete(Location location) {
+    public void delete(Artist artist) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(location);
+        session.delete(artist);
         transaction.commit();
         session.close();
     }
     /**
-     * Gets a location by id
-     * @param id location id to search by
-     * @return a location
+     * Gets a artist by id
+     * @param id artist id to search by
+     * @return a artist
      */
-    public Location getById(int id) {
+    public Artist getById(String id) {
         Session session = sessionFactory.openSession();
-        Location location = session.get(Location.class, id);
+        Artist artist = session.get(Artist.class, id);
         session.close();
-        return location;
+        return artist;
     }
 }
