@@ -14,14 +14,15 @@ public class Artist {
     @Id
     private String id;
     private String artist_name;
-    @ManyToMany(cascade = { CascadeType.ALL })
+
+
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
     @JoinTable(
             name = "artist_location",
             joinColumns = { @JoinColumn(name = "artist_id") },
             inverseJoinColumns = { @JoinColumn(name = "location_id") }
     )
     Set<Location> locations = new HashSet<>();
-
 
     /**
      * Instantiates a new Artist.
@@ -38,6 +39,20 @@ public class Artist {
     public Artist(String id, String artist_name) {
         this.id = id;
         this.artist_name = artist_name;
+    }
+
+    /**
+     * @return an artist's locations
+     */
+    public Set<Location> getLocations() {
+        return locations;
+    }
+
+    /**
+     * @param locations
+     */
+    public void setLocations(Set<Location> locations) {
+        this.locations = locations;
     }
 
     /**
