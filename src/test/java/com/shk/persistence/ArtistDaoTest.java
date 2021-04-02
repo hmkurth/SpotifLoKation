@@ -83,13 +83,14 @@ class ArtistDaoTest {
 
         String id = "5L3STwlqP4cN3E9rMWES48";
         Artist artist = dao.getById(id);
-        artist.addLocation(location);
+        Set<Location> locationsBeforeUpdate = artist.getLocations();
 
+        artist.addLocation(location);
         dao.update(artist);
 
         Artist artistAfterUpdate = dao.getById(id);
         Set<Location> locationsAfterUpdate = artistAfterUpdate.getLocations();
-        assert(locationsAfterUpdate.size() == 3);
+        assert(locationsAfterUpdate.size() == (locationsBeforeUpdate.size() + 1));
 
 
     }
@@ -101,15 +102,16 @@ class ArtistDaoTest {
 
         String id = "5L3STwlqP4cN3E9rMWES48";
         Artist artist = dao.getById(id);
-        artist.removeLocation(location);
+        Set<Location> locationsBeforeUpdate = artist.getLocations();
 
+        artist.removeLocation(location);
         dao.update(artist);
         //locationDao.update(location);
 
         Artist artistAfterUpdate = dao.getById(id);
         Set<Location> locationsAfterUpdate = artistAfterUpdate.getLocations();
         logger.info(locationsAfterUpdate.size());
-        assert(locationsAfterUpdate.size() == 1);
+        assert(locationsAfterUpdate.size() == (locationsBeforeUpdate.size() - 1));
     }
 
 
