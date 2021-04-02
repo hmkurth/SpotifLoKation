@@ -1,6 +1,6 @@
-package persistence;
+package com.shk.persistence;
 
-import entity.Artist;
+import com.shk.entity.Artist;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -45,11 +45,11 @@ public class ArtistDao {
      * @param artist artist to be inserted
      * @return id of artist inserted
      */
-    public int insert(Artist artist) {
-        int id = 0;
+    public String insert(Artist artist) {
+        String id;
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        id = (int)session.save(artist);
+        id = (String)session.save(artist);
         transaction.commit();
         session.close();
         return id;
@@ -71,7 +71,7 @@ public class ArtistDao {
      * @param id artist id to search by
      * @return a artist
      */
-    public Artist getById(int id) {
+    public Artist getById(String id) {
         Session session = sessionFactory.openSession();
         Artist artist = session.get(Artist.class, id);
         session.close();

@@ -1,6 +1,6 @@
-package persistence;
+package com.shk.persistence;
 
-import entity.Location;
+import com.shk.entity.Location;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

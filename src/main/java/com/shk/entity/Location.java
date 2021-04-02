@@ -1,4 +1,4 @@
-package entity;
+package com.shk.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -16,7 +16,7 @@ public class Location {
     private String country;
     private String region;
     private String city;
-    @ManyToMany(mappedBy = "projects")
+    @ManyToMany(mappedBy = "locations", fetch = FetchType.EAGER)
     private Set<Artist> artists = new HashSet<>();
 
     /**
@@ -27,12 +27,27 @@ public class Location {
     /**
      * Instantiates a new location.
      */
-    public Location(int id, String country, String region, String city) {
-        this.id = id;
+    public Location(String country, String region, String city) {
+
         this.country = country;
         this.region = region;
         this.city = city;
     }
+
+    /**
+     * @return
+     */
+    public Set<Artist> getArtists() {
+        return artists;
+    }
+
+    /**
+     * @param artists
+     */
+    public void setArtists(Set<Artist> artists) {
+        this.artists = artists;
+    }
+
     /**
      * Gets id.
      *
@@ -107,4 +122,6 @@ public class Location {
                 ", city='" + city + '\'' +
                 '}';
     }
+
+
 }

@@ -1,4 +1,4 @@
-package entity;
+package com.shk.entity;
 
 
 import javax.persistence.*;
@@ -14,14 +14,15 @@ public class Artist {
     @Id
     private String id;
     private String artist_name;
-    @ManyToMany(cascade = { CascadeType.ALL })
+
+
+    @ManyToMany(/*cascade = { CascadeType.ALL },*/ fetch = FetchType.EAGER)
     @JoinTable(
             name = "artist_location",
             joinColumns = { @JoinColumn(name = "artist_id") },
             inverseJoinColumns = { @JoinColumn(name = "location_id") }
     )
     Set<Location> locations = new HashSet<>();
-    private int location_id;
 
     /**
      * Instantiates a new Artist.
@@ -35,9 +36,23 @@ public class Artist {
      * @param artist_name  the artist's name
      *
      */
-    public Artist(String id, String artist_name, int location_id) {
+    public Artist(String id, String artist_name) {
         this.id = id;
         this.artist_name = artist_name;
+    }
+
+    /**
+     * @return an artist's locations
+     */
+    public Set<Location> getLocations() {
+        return locations;
+    }
+
+    /**
+     * @param locations
+     */
+    public void setLocations(Set<Location> locations) {
+        this.locations = locations;
     }
 
     /**
@@ -79,5 +94,31 @@ public class Artist {
                 "id='" + id + '\'' +
                 ", artist_name='" + artist_name + '\'' +
                 '}';
+    }
+
+    /**
+     * Adds a location to the Artist's set of locations
+     * @param location
+     */
+    public void addLocation(Location location) {
+        this.locations.add(location);
+        location.getArtists().add(this);
+
+    }
+
+    /**
+     * Removes a location from the Artist's set of locations
+     * @param location
+     */
+    public void removeLocation(Location location) {
+        for(Location nextLocation : this.locations)
+        {
+            if(nextLocation.getId() == location.getId())
+            {
+                this.locations.remove(nextLocation);
+                break;
+            }
+        }
+        location.getArtists().remove(this);
     }
 }
