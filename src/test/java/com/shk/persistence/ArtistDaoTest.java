@@ -85,13 +85,11 @@ class ArtistDaoTest {
         Artist artist = dao.getById(id);
         Set<Location> locationsBeforeUpdate = artist.getLocations();
         int expectedValue = locationsBeforeUpdate.size() + 1;
-
         artist.addLocation(location);
         dao.update(artist);
 
         Artist artistAfterUpdate = dao.getById(id);
         Set<Location> locationsAfterUpdate = artistAfterUpdate.getLocations();
-
         assert(locationsAfterUpdate.size() == expectedValue);
 
 
@@ -104,11 +102,13 @@ class ArtistDaoTest {
 
         String id = "5L3STwlqP4cN3E9rMWES48";
         Artist artist = dao.getById(id);
+        logger.info("artist id" + artist.getId());
         Set<Location> locationsBeforeUpdate = artist.getLocations();
         logger.info("locations before update: " + locationsBeforeUpdate.size());
         int expectedValue = locationsBeforeUpdate.size() - 1;
 
         artist.removeLocation(location);
+        logger.info("artist locations count: " + artist.getLocations().size());
         dao.update(artist);
 
         Artist artistAfterUpdate = dao.getById(id);

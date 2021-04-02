@@ -111,7 +111,14 @@ public class Artist {
      * @param location
      */
     public void removeLocation(Location location) {
-        this.locations.remove(location);
+        for(Location nextLocation : this.locations)
+        {
+            if(nextLocation.getId() == location.getId())
+            {
+                this.locations.remove(nextLocation);
+                break;
+            }
+        }
         location.getArtists().remove(this);
     }
 }
