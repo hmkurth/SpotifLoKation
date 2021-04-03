@@ -16,7 +16,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Path("/locations")
-public class RestService {
+public class GetArtistLocation {
     @GET
     @Path("{id}")
     public Response getArtistLocationById(@PathParam("id") String id) throws JsonProcessingException {

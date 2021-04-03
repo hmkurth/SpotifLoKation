@@ -14,7 +14,7 @@ public class RestApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
-        h.add(RestService.class);
+        h.add(GetArtistLocation.class);
         return h;
     }
 }
