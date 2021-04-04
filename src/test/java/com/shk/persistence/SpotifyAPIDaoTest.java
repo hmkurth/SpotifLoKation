@@ -1,4 +1,4 @@
-package edu.matc.persistence;
+package com.shk.persistence;
 
 import com.wrapper.spotify.model_objects.specification.Artist;
 import org.apache.logging.log4j.LogManager;
@@ -18,10 +18,6 @@ public class SpotifyAPIDaoTest {
 
         Artist returnedArtist = auth.getSpotifyArtist("0LcJLqbBmaGUft1e9Mm8HV");
         assert(returnedArtist.getName().equals("ABBA"));
-
-        String[]ids = {"2uYWxilOVlUdk4oV9DvwqK", "07D1Bjaof0NFlU32KXiqUP", "1r1uxoy19fzMxunt3ONAkG"};
-        Artist[] artists = auth.getSeveralSpotifyArtists(ids);
-        assert(artists.length == 3 );
 
 
     }
