@@ -15,6 +15,7 @@ public class RestApplication extends Application {
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
         h.add(GetArtistLocation.class);
+        h.add(GetAll.class);
         return h;
     }
 }

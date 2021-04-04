@@ -1,6 +1,8 @@
 package com.shk.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,6 +24,7 @@ public class Artist {
             joinColumns = { @JoinColumn(name = "artist_id") },
             inverseJoinColumns = { @JoinColumn(name = "location_id") }
     )
+    @JsonIgnore
     Set<Location> locations = new HashSet<>();
 
     /**
