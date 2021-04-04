@@ -22,7 +22,7 @@ public class SpotifyAPIDao implements PropertiesLoader {
     private final SpotifyApi spotifyApi;
 
     /**
-     *
+     * Default constructor loads in client information from the properties file
      */
     public SpotifyAPIDao() {
 
@@ -47,20 +47,6 @@ public class SpotifyAPIDao implements PropertiesLoader {
                 .setClientSecret(clientSecret)
                 .build();
 
-    }
-
-    /**
-     * Constructor with api builder
-     *
-     * @param clientId
-     * @param clientSecret
-     */
-    public SpotifyAPIDao(String clientId, String clientSecret) {
-
-        spotifyApi = new SpotifyApi.Builder()
-                .setClientId(clientId)
-                .setClientSecret(clientSecret)
-                .build();
     }
 
     /**
