@@ -50,8 +50,8 @@ MVP:
 | 2 | Consume Spotify API / Logic | SL | | |
 | 2 | REST Service - Hard Coded | KH | | |
 | 2 | REST Service - Live Data | SL | | |
-| 2 | Deploy to AWS | HK | Wait on application flow | |
-| 3 | Bootstrap / CSS styling | | | |
-| 3 | Project Documentation | | | |
+| 2 | Deploy to AWS | HK | Wait on application flow | y|
+| 3 | Bootstrap / CSS styling | hk| | |
+| 3 | Project Documentation | | | i (HK)have done some looking into this...|
 | 3 | Presentation Prep | | | |
 
