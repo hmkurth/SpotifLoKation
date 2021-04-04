@@ -103,31 +103,11 @@ public class SpotifyAPIDao implements PropertiesLoader {
             artist = getArtistRequest.execute();
 
 
-            //logger.info("Name: " + artist.getName());
-            //logger.info("Spotify ID: " + artist.getId());
-
-
         } catch (IOException | SpotifyWebApiException | org.apache.hc.core5.http.ParseException e) {
             logger.info("Error: " + e.getMessage());
         }
 
         return artist;
 
-    }
-
-    public Artist[] getSeveralSpotifyArtists(String[] ids) {
-        final GetSeveralArtistsRequest getSeveralArtistsRequest = spotifyApi.getSeveralArtists(ids)
-                .build();
-        Artist[] artists = null;
-
-        try {
-            artists = getSeveralArtistsRequest.execute();
-
-            logger.error("Length: " + artists.length);
-        } catch (IOException | SpotifyWebApiException | org.apache.hc.core5.http.ParseException e) {
-            logger.error("Error: " + e.getMessage());
-        }
-
-        return artists;
     }
 }
