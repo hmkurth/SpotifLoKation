@@ -159,6 +159,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- Spotify Java Wrapper -->
+    <dependency>
+      <groupId>se.michaelthelin.spotify</groupId>
+      <artifactId>spotify-web-api-java</artifactId>
+      <version>6.5.2</version>
+    </dependency>
+
 
 
 
