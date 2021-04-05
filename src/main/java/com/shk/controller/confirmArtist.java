@@ -1,5 +1,8 @@
 package com.shk.controller;
 
+import com.shk.entity.Artist;
+import com.shk.persistence.ArtistDao;
+import com.shk.persistence.SpotifyAPIDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,16 +23,45 @@ public class confirmArtist extends HttpServlet {
         String idEntered = req.getParameter("spotifyId");
         logger.info(idEntered);
 
-        //check db
-            // if yes: return artist object w/ location
-            // if no: attempt to select from Spotify API
 
-                // if yes: return artist object
-                // in no: return error message
+        Artist artist;
+        String message;
+
+        if (idEntered != null) {
+            artist = retrieveArtist(idEntered);
+
+            if (artist != null ) {
+                message = "artist found";
+            } else {
+                message = "I'm sorry we could not locate that artist";
+            }
+
+            req.setAttribute("artist", artist);
+            req.setAttribute("message", message);
+        }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/editArtist.jsp");
         dispatcher.forward(req, resp);
 
+    }
+
+    public Artist retrieveArtist(String id) {
+
+        ArtistDao dao = new ArtistDao();
+        Artist artist = dao.getById(id);
+
+        if (artist != null ) {
+            logger.info("artist found in db");
+            return artist;
+
+        } else {
+            logger.info("looking for artist with spotify");
+            SpotifyAPIDao spotifyAPIDao = new SpotifyAPIDao();
+            com.wrapper.spotify.model_objects.specification.Artist spotifyArtist = spotifyAPIDao.getSpotifyArtist(id);
+            String spotifyName = spotifyArtist.getName();
+            artist.setArtist_name(spotifyName);
+            return artist;
+        }
     }
 
 }
