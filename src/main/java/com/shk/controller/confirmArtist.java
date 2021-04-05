@@ -55,11 +55,14 @@ public class confirmArtist extends HttpServlet {
             return artist;
 
         } else {
+            artist = new Artist();
             logger.info("looking for artist with spotify");
             SpotifyAPIDao spotifyAPIDao = new SpotifyAPIDao();
+            spotifyAPIDao.clientCredentials_Sync();
             com.wrapper.spotify.model_objects.specification.Artist spotifyArtist = spotifyAPIDao.getSpotifyArtist(id);
             String spotifyName = spotifyArtist.getName();
             artist.setArtist_name(spotifyName);
+            logger.info("artist found: " + spotifyName);
             return artist;
         }
     }
