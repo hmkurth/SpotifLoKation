@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
+
 @WebServlet(
         urlPatterns = {"/confirm-artist"}
 )
@@ -26,6 +28,7 @@ public class confirmArtist extends HttpServlet {
 
         Artist artist;
         String message;
+
 
         if (idEntered != null) {
             artist = retrieveArtist(idEntered);
@@ -51,18 +54,22 @@ public class confirmArtist extends HttpServlet {
         Artist artist = dao.getById(id);
 
         if (artist != null ) {
-            logger.info("artist found in db");
             return artist;
 
         } else {
             artist = new Artist();
-            logger.info("looking for artist with spotify");
+
             SpotifyAPIDao spotifyAPIDao = new SpotifyAPIDao();
             spotifyAPIDao.clientCredentials_Sync();
             com.wrapper.spotify.model_objects.specification.Artist spotifyArtist = spotifyAPIDao.getSpotifyArtist(id);
-            String spotifyName = spotifyArtist.getName();
-            artist.setArtist_name(spotifyName);
-            logger.info("artist found: " + spotifyName);
+
+            if (spotifyArtist != null) {
+                String spotifyName = spotifyArtist.getName();
+                artist.setArtist_name(spotifyName);
+                artist.setId(id);
+                dao.insert(artist);
+            }
+
             return artist;
         }
     }
