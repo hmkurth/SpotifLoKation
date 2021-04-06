@@ -22,7 +22,7 @@
         <input type="submit" value="remove location" name="removeLocation">
     </form>
 
-    <form class="form" id="addLocationForm" action="" method="post">
+    <form class="form" id="addLocationForm" action="add-location" method="post">
         <h4>Add new Location</h4>
         <input type="text" placeholder="Country" name="country">
         <input type="text" placeholder="State/ Providence" name="region">
