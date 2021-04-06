@@ -44,6 +44,25 @@ Fri 3/26 Slack Discussion :
     added meta-inf, context.xml(will need to update the db name when created), and my POM file(you may have to tweak for your machines), deployment setup.
      I was looking at some documentation generators, not sure if that's necessary, but it looks relatively simple..https://my.miredot.com/dashboard/
 
+Week 2:
+    (HK)This week we got alot of experience with working as a team in a GIT repository, merging, branching, and pulling.
+    We had a team meeting on Sunday 3/27 to discuss the upcoming week and how we were going to approach development.
+    On a personal note, I've been struggling with the demands of the weekly work, my project, my professional dev presentation, and this project.
+    I start one thing, but quickly find myself being pulled by something else, it's been stressful trying to get the right balance,
+    I want to contribute to the team project, but I also have so many other things.  C'est le vie....
+    Simone has really been the major player in the development and has been doing a great job leading us to product that she wants
+    to consume, I've just been trying to keep up and find things that I can do to help the team and hope that I'm not making things worse.
+
+    We decided that we could go ahead and use the spotify information, that was one question we had.
+    We worked on getting the database up, I had some difficulty figuring out how to map that.  Simone and Kaitlyn worked on getting the main classes and daos completed.
+    We had a little difficulty with the delete test, but Kaitlyn troubleshot that and got it working.
+    We got a bit of experience with gitignore files, database passwords, and other sharing concerns, it was a great learning experience.  Keeping track of what other
+    people are working on, and what I/ we should be doing, and how to piece it together has been one of the major learning curves for this project.
+    I(HK) got yet another attempt to waste hours of my life trying to deploy on AWS...I figured that with all the problems I had previously with
+    it I should be a pro by now...not so :)
+    We have some decisions to make about how much information we are going to gather from spotify and reserve to make it "robust".
+    I(HK) have been looking into some of the documentation resources...I was going for Miredot, but I couldn't get it working,
+    I looked into swagger.io a little today, as well as some bootstrap templates.  I'm hoping to be able to figure that out soon.
 
 
 
