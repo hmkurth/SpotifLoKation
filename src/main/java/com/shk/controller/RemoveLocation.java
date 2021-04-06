@@ -1,8 +1,13 @@
 package com.shk.controller;
 
+import com.shk.entity.Artist;
+import com.shk.entity.Location;
+import com.shk.persistence.ArtistDao;
+import com.shk.persistence.LocationDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,27 +16,30 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        urlPatterns = {"/edit-location"}
+        urlPatterns = {"/remove-location"}
 )
 
-public class EditLocation extends HttpServlet {
+public class RemoveLocation extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getParameter("submit").equals("removeLocation")){
-            logger.info("remove location");
-        } else if (req.getParameter("submit").equals("addLocation")) {
-            logger.info("add location");
-        }
+        String artistId = req.getParameter("artistId");
+        int locationId = Integer.parseInt((req.getParameter("location")));
+        //logger.info("remove location for artist: " + artistId + ", and location: " + locationId);
+
+        LocationDao locationDao = new LocationDao();
+        ArtistDao artistDao = new ArtistDao();
+        Location location = locationDao.getById(locationId);
+        Artist artist = artistDao.getById(artistId);
+        artist.removeLocation(location);
+
+        req.setAttribute("artist", artist);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/editArtist.jsp");
+        dispatcher.forward(req, resp);
+
 
 
     }
 
-    public void removeLocation(int locationId, String artistId) {
 
-    }
-
-    public void addLocation(String artistId) {
-
-    }
 }
