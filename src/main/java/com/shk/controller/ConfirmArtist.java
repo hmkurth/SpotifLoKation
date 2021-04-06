@@ -18,7 +18,7 @@ import java.io.IOException;
 @WebServlet(
         urlPatterns = {"/confirm-artist"}
 )
-public class confirmArtist extends HttpServlet {
+public class ConfirmArtist extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
