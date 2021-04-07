@@ -12,7 +12,7 @@
                 </p>
                 <form class="form" id="confirmId" action="confirm-artist" method="get">
                     <label for="spotifyId">
-                    <input class="form-control" id="spotifyId" placeholder="Spotify Artist Id" >
+                    <input class="form-control" id="spotifyId" name="spotifyId" placeholder="Spotify Artist Id" >
                     </label>
 
                     <input class="btn btn-primary" type="submit" value="confirm artist" >
