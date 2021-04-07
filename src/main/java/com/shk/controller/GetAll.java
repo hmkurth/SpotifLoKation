@@ -27,6 +27,6 @@ public class GetAll {
         ObjectMapper mapper = new ObjectMapper();
         String artistData = mapper.writeValueAsString(artists);
         String locationData = mapper.writeValueAsString(locations);
-        return Response.status(200).entity("Artists: "artistData + " Locations: " + locationData).build();
+        return Response.status(200).entity(artistData + locationData).build();
     }
 }

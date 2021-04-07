@@ -22,18 +22,15 @@ public class GetArtistLocation {
     public Response getArtistLocationById(@PathParam("id") String id) throws JsonProcessingException {
 
             Artist artist = new Artist();
-            artist.setId(id);
-            artist.setArtist_name("Good Grief");
             ArtistDao dao = new ArtistDao();
 
-        Set<Location> locations = new HashSet<>();
-        Location location = new Location("US", "WI", "Madison");
-        locations.add(location);
-        artist.setLocations(locations);
+            artist = dao.getById(id);
 
-        Set<Location> locationOutput = artist.getLocations();
+            Set<Location> locations = new HashSet<>();
+            locations = artist.getLocations();
+
         ObjectMapper mapper = new ObjectMapper();
-        String locationJSON = mapper.writeValueAsString(locationOutput);
-        return Response.status(200).entity(locationJSON + " The Artist ID: " + id).build();
+        String locationJSON = mapper.writeValueAsString(locations);
+        return Response.status(200).entity(locationJSON).build();
     }
 }
