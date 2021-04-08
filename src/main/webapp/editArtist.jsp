@@ -1,9 +1,9 @@
 <%@include file="taglib.jsp" %>
 <%@ page import="com.shk.entity.Artist" %>
-<%@include file="taglib.jsp" %>
 
-<%@include file="head.jsp"%>
-<%@include file="nav.jsp"%>
+
+<%@include file="/head.jsp"%>
+<%@include file="/nav.jsp"%>
 
 <section class="projects-section bg-light" id="editArtist">
     <div class="container">
