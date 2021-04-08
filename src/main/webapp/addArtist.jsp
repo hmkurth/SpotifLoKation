@@ -20,6 +20,6 @@
 
             </div>
         </div>
-        <img class="img-fluid" src="assets/img/ipad.png" alt="" />
+        <img class="img-fluid" src="assets/img/guitarPlayer.jpeg" alt="" />
     </div>
 </section>

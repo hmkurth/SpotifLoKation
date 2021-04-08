@@ -6,6 +6,7 @@
 <%@include file="addArtist.jsp"%>
 
 
+
 <script>document.title = "Artist Location"</script>
 <%@include file="footer.jsp"%>
 
