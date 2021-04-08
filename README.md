@@ -45,13 +45,15 @@ MVP:
 | 1 | Configure Hibernate | HK | hibernate.cfg.xml added to main and test| |
 | 1 | DAO | KH | | Y|
 | 1 | Entities | KH | |Y|
-| 1 | Tests - CRUD | SL | | |
-| 1 | Basic JSPs + Controllers | SL | | |
-| 2 | Consume Spotify API / Logic | SL | | |
+| 1 | Tests - CRUD | SL | | Y|
+| 1 | Basic JSPs + Controllers | SL | | Y |
+| 2 | Consume Spotify API / Logic | SL |Happy Path is okay, considering error handling/ messaging |Y|
 | 2 | REST Service - Hard Coded | KH | | |
-| 2 | REST Service - Live Data | SL | | |
-| 2 | Deploy to AWS | HK | Wait on application flow | |
-| 3 | Bootstrap / CSS styling | | | |
-| 3 | Project Documentation | | | |
-| 3 | Presentation Prep | | | |
+| 2 | REST Service - Live Data | KH | | |
+| 2 | Deploy to AWS | HK | Wait on application flow | y|
+| 3 | Error handling - front end | SL | | |
+| 3 | Error handling - service | SL | | | 
+| 3 | Bootstrap / CSS styling |hk| | |
+| 3 | Project Documentation | | | i (HK)have done some looking into this... Swagger IO|
+| 3 | Presentation Prep | ALL | | |
 
