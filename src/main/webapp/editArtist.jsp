@@ -6,7 +6,7 @@
 <div class="container-md">
 
     <h2>${message}</h2>
-
+    <c:if test="${isFound == 'true'}">
     <h3>${artist.artist_name}</h3>
     <h4>${artist.id}</h4>
 
@@ -32,6 +32,7 @@
         <input type="hidden" name="artistId" value="${artist.id}">
         <input type="submit" value="add location" name="addLocation">
     </form>
+    </c:if>
 
 
 </div>

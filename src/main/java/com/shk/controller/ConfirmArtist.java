@@ -28,6 +28,7 @@ public class ConfirmArtist extends HttpServlet {
 
         Artist artist;
         String message;
+        boolean isFound;
 
 
         if (idEntered != null) {
@@ -35,12 +36,15 @@ public class ConfirmArtist extends HttpServlet {
 
             if (artist.getId() != null ) {
                 message = "artist found";
+                isFound = true;
             } else {
                 message = "I'm sorry we could not locate that artist";
+                isFound = false;
             }
 
             req.setAttribute("artist", artist);
             req.setAttribute("message", message);
+            req.setAttribute("isFound", isFound);
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/editArtist.jsp");
