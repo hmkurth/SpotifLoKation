@@ -25,12 +25,12 @@ public class SpotifyAPIDao implements PropertiesLoader {
      */
     public SpotifyAPIDao() {
 
-        String clientId = "3845f1bfe86644f0921f6e925e791c5e";
-        String clientSecret = "522b75c39ab64b10b51fc5feebad8eb8";
+        String clientId = "";
+        String clientSecret = "";
 
         Properties spotifyProperties = new Properties();
         try {
-            spotifyProperties = loadProperties("/com/shk/utilities/spotifyAPI.properties");
+            spotifyProperties = loadProperties("/spotifyAPI.properties");
             clientId = spotifyProperties.getProperty("clientId");
             clientSecret = spotifyProperties.getProperty("clientSecret");
 
