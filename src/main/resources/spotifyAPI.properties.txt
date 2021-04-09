@@ -1,2 +1,0 @@
-clientId=AddYourClientIdHere
-clientSecret=AddYourClientSecretHere

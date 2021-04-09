@@ -34,7 +34,7 @@ public class ConfirmArtist extends HttpServlet {
             artist = retrieveArtist(idEntered);
 
             if (artist != null ) {
-                message = "artist found";
+                message = "Congrats! We found your artist!";
             } else {
                 message = "I'm sorry we could not locate that artist";
             }

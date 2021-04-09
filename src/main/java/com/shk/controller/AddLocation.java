@@ -33,7 +33,7 @@ public class AddLocation extends HttpServlet {
         ArtistDao artistDao = new ArtistDao();
         Artist artist = artistDao.getById(artistId);
         Location location = null;
-
+        String message = null;
         //TODO - This doesn't really work, there's not a good way to check for an existing location
         List<Location> locations = locationDao.getAllLocations();
         for (Location l : locations) {
@@ -48,6 +48,8 @@ public class AddLocation extends HttpServlet {
                 location.setCountry(country);
                 location.setRegion(region);
                 location.setCity(city);
+
+                message = "You have successfully added a location for this artist, thankyou for contributing to SpotIfloKation!";
             }
         }
 
@@ -55,7 +57,7 @@ public class AddLocation extends HttpServlet {
 
         locationDao.insert(location);
         artist.addLocation(location);
-
+        req.setAttribute("message", message);
         req.setAttribute("artist", artist);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/editArtist.jsp");
         dispatcher.forward(req, resp);
