@@ -25,8 +25,8 @@ public class SpotifyAPIDao implements PropertiesLoader {
      */
     public SpotifyAPIDao() {
 
-        String clientId = "";
-        String clientSecret = "";
+        String clientId = null;
+        String clientSecret = null;
 
         Properties spotifyProperties = new Properties();
         try {

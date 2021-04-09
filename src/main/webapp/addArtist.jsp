@@ -1,5 +1,6 @@
 <!-- add artist-->
 <%@include file="taglib.jsp" %>
+
 <section class="about-section text-center" id="addArtist">
     <div class="container">
         <div class="row">
