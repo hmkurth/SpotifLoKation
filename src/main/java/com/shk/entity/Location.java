@@ -1,5 +1,6 @@
 package com.shk.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class Location {
     private String region;
     private String city;
     @ManyToMany(mappedBy = "locations", fetch = FetchType.EAGER)
+    @JsonIgnore
     private Set<Artist> artists = new HashSet<>();
 
     /**

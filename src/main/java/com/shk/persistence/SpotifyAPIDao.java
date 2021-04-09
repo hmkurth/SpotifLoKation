@@ -7,7 +7,6 @@ import com.wrapper.spotify.model_objects.credentials.ClientCredentials;
 import com.wrapper.spotify.model_objects.specification.Artist;
 import com.wrapper.spotify.requests.authorization.client_credentials.ClientCredentialsRequest;
 import com.wrapper.spotify.requests.data.artists.GetArtistRequest;
-import com.wrapper.spotify.requests.data.artists.GetSeveralArtistsRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,8 +25,8 @@ public class SpotifyAPIDao implements PropertiesLoader {
      */
     public SpotifyAPIDao() {
 
-        String clientId = null;
-        String clientSecret = null;
+        String clientId = "";
+        String clientSecret = "";
 
         Properties spotifyProperties = new Properties();
         try {
