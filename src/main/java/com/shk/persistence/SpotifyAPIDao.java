@@ -1,6 +1,7 @@
 package com.shk.persistence;
 
 
+import com.shk.entity.Image;
 import com.wrapper.spotify.SpotifyApi;
 import com.wrapper.spotify.exceptions.SpotifyWebApiException;
 import com.wrapper.spotify.model_objects.credentials.ClientCredentials;
@@ -93,6 +94,25 @@ public class SpotifyAPIDao implements PropertiesLoader {
         }
 
         return artist;
+
+    }
+
+    /**
+     * @param spotifyArtist
+     * @return
+     */
+    public Image getSpotifyArtistImage(Artist spotifyArtist) {
+
+       Image imageToSave = null;
+            com.wrapper.spotify.model_objects.specification.Image[] images = spotifyArtist.getImages();
+            for (Image image : images) {
+                imageToSave = image;
+                logger.info(image.getUrl());
+            }
+
+
+
+        return imageToSave;
 
     }
 }

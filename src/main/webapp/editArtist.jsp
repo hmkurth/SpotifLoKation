@@ -13,8 +13,8 @@
             <div class="col-xl-6 col-lg-6">
                 <div class="featured-text text-center text-lg-left">
                     <h4 class="text-white">${message}</h4>
-                    <h3 class="text-white">Artist Name:${artist.artist_name}</h3>
-                    <h4 class="text-white">Artist Id:${artist.id}</h4>
+                    <h3 class="text-white">Artist Name: ${artist.artist_name}</h3>
+                    <h4 class="text-white">Artist Id: ${artist.id}</h4>
                     <p class="text-white-50 mb-0">If there are already locations found for this artist, they will appear here. Please be careful before deleting known locations.</p>
                     <h4 class="text-white">Locations</h4>
                     <form class="form" id="removeLocationForm" action="remove-location" method="post">
