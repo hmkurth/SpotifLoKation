@@ -25,15 +25,17 @@ public class RemoveLocation extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String artistId = req.getParameter("artistId");
         int locationId = Integer.parseInt((req.getParameter("location")));
-        //logger.info("remove location for artist: " + artistId + ", and location: " + locationId);
+        logger.info("remove location for artist: " + artistId + ", and location: " + locationId);
 
         LocationDao locationDao = new LocationDao();
         ArtistDao artistDao = new ArtistDao();
         Location location = locationDao.getById(locationId);
         Artist artist = artistDao.getById(artistId);
         artist.removeLocation(location);
+        artistDao.update(artist);
 
         req.setAttribute("artist", artist);
+        req.setAttribute("isFound", true);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/editArtist.jsp");
         dispatcher.forward(req, resp);
 
