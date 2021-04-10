@@ -14,5 +14,7 @@
 |4/8/2021|front end work, styling,photos, troubleshooting spotify properties|5|hk|
 |4/8/2021| deployed new war file, updated tomcat database and seeded, played around with adding images|2|hk|
 |4/9/2021|checking on aws status check failures, trying documentation, updating logs|2|hk|
+|4/9/2021|working on getting documention from swagger.io|1|hk|
+
 |
 
