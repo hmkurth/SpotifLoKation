@@ -29,7 +29,10 @@
                                 </c:forEach>
                                 </ul>
                             <input type="hidden" name="artistId" value="${artist.id}">
+                            <!--
                             <input type="submit" value="remove location" name="removeLocation">
+                            -->
+                            <button type="button" onclick="confirmDelete()">Remove Location</button>
                             </form>
                          </c:if>
 
@@ -52,4 +55,12 @@
     </div>
 </section>
 <script>document.title = "Edit"</script>
+<script>
+    const confirmDelete = () => {
+        let confirmation = confirm("Are you sure you want to delete this location?");
+        if (confirmation) {
+            document.forms["removeLocationForm"].submit();
+        }
+    }
+</script>
 <%@include file="footer.jsp"%>
