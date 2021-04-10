@@ -34,39 +34,34 @@ public class AddLocation extends HttpServlet {
         Artist artist = artistDao.getById(artistId);
         Location location = null;
 
-        /*
-        //String message = null;
-        //TODO - This doesn't really work, there's not a good way to check for an existing location
+        //check for existing location before adding a new one
         List<Location> locations = locationDao.getAllLocations();
         for (Location l : locations) {
             String thisCountry = l.getCountry();
             String thisRegion = l.getRegion();
             String thisCity = l.getCity();
 
-            if (thisCountry.equals(country) && thisRegion.equals(region) && thisCity.equals(city)) {
+
+            if ((thisCountry.equals(country)) && (thisRegion.equals(region)) && (thisCity.equals(city))) {
+                logger.info("match found!");
                 location = l;
+                break;
             } else {
+                logger.info("no match found");
                 location = new Location();
                 location.setCountry(country);
                 location.setRegion(region);
                 location.setCity(city);
 
-                //message = "You have successfully added a location for this artist, thankyou for contributing to SpotIfloKation!";
             }
-        }
-         */
 
-        //adding a new one each time
-        location = new Location();
-        location.setCountry(country);
-        location.setRegion(region);
-        location.setCity(city);
+        }
+
 
         locationDao.insert(location);
         artist.addLocation(location);
         artistDao.update(artist);
 
-        //req.setAttribute("message", message);
         req.setAttribute("artist", artist);
         req.setAttribute("isFound", true);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/editArtist.jsp");
