@@ -47,7 +47,7 @@
                     </c:if>
 
                     <c:if test="${isFound == 'false'}">
-                        <h2>${message}</h2>
+                        <h2>I'm sorry we could not locate that artist</h2>
                     </c:if>
                 </div>
             </div>

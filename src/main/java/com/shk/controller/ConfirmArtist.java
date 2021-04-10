@@ -23,27 +23,21 @@ public class ConfirmArtist extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String idEntered = req.getParameter("spotifyId");
-        logger.info(idEntered);
-
+        //logger.info(idEntered);
 
         Artist artist;
-        String message;
         boolean isFound;
-
 
         if (idEntered != null) {
             artist = retrieveArtist(idEntered);
 
             if (artist.getId() != null ) {
-                message = "artist found";
                 isFound = true;
             } else {
-                message = "I'm sorry we could not locate that artist";
                 isFound = false;
             }
 
             req.setAttribute("artist", artist);
-            req.setAttribute("message", message);
             req.setAttribute("isFound", isFound);
         }
 
