@@ -48,8 +48,8 @@ MVP:
 | 1 | Tests - CRUD | SL | | Y|
 | 1 | Basic JSPs + Controllers | SL | | Y |
 | 2 | Consume Spotify API / Logic | SL |Happy Path is okay, considering error handling/ messaging |Y|
-| 2 | REST Service - Hard Coded | KH | | |
-| 2 | REST Service - Live Data | KH | | |
+| 2 | REST Service - Hard Coded | KH | | y|
+| 2 | REST Service - Live Data | KH | | y|
 | 2 | Deploy to AWS | HK | Wait on application flow | y|
 | 3 | Error handling - front end | SL | | |
 | 3 | Error handling - service | SL | | | 

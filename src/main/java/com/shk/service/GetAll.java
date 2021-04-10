@@ -16,6 +16,11 @@ import java.util.List;
 @Path("/all")
 public class GetAll {
     @GET
+    /**
+     * This  method gets all artist and Location data and returns it as JSON data
+     *
+     * @return the response
+     */
     public Response getAll() throws JsonProcessingException {
         ArtistDao artistDao = new ArtistDao();
 
