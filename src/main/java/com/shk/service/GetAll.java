@@ -9,6 +9,9 @@ import com.shk.persistence.ArtistDao;
 import com.shk.persistence.LocationDao;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
@@ -21,6 +24,7 @@ public class GetAll {
      *
      * @return the response
      */
+    @Produces(MediaType.APPLICATION_JSON)
     public Response getAll() throws JsonProcessingException {
         ArtistDao artistDao = new ArtistDao();
 
@@ -34,4 +38,5 @@ public class GetAll {
         String locationData = mapper.writeValueAsString(locations);
         return Response.status(200).entity(artistData + locationData).build();
     }
+
 }
