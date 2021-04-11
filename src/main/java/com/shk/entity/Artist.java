@@ -24,7 +24,7 @@ public class Artist {
             joinColumns = { @JoinColumn(name = "artist_id") },
             inverseJoinColumns = { @JoinColumn(name = "location_id") }
     )
-    @JsonIgnore
+
     Set<Location> locations = new HashSet<>();
 
     /**

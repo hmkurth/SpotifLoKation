@@ -5,7 +5,7 @@
 <%@include file="head.jsp"%>
 <%@include file="nav.jsp"%>
 
-<section class="projects-section bg-light" id="editArtist">
+<section class="projects-section bg-dark" id="editArtist">
     <div class="container">
         <!-- Featured Project Row-->
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
@@ -13,21 +13,21 @@
             <div class="col-xl-6 col-lg-6">
                 <div class="featured-text text-center text-lg-left">
                     <c:if test="${isFound == 'true'}">
-                        <h3>${artist.artist_name}</h3>
-                        <p>${artist.id}</p>
+                        <h3 class="text-white">${artist.artist_name}</h3>
+                        <p class="text-white">${artist.id}</p>
 
                         <c:if test="${fn:length(artist.locations) > 0}">
                             <form class="form" id="removeLocationForm" action="remove-location" method="post">
 
-                                <h4>Locations</h4>
-                                <ul style="list-style-type:none;">
+                                <h4 class="text-white">Locations</h4>
+
                                 <c:forEach var="location" items="${artist.locations}">
-                                    <li>
-                                      <input type="radio" id="${location.id}" name="location" value="${location.id}">
-                                      <label for="${location.id}"><h5>${location.country}, ${location.region}, ${location.city} </h5></label>
-                                    </li>
+                                    <div>
+                                      <label class="text-white" for="${location.id}"><h5>${location.country}, ${location.region}, ${location.city} </h5></label>
+                                      <input class="form-control" type="radio" id="${location.id}" name="location" value="${location.id}">
+                                    </div>
                                 </c:forEach>
-                                </ul>
+
                             <input type="hidden" name="artistId" value="${artist.id}">
                             <!--
                             <input type="submit" value="remove location" name="removeLocation">
@@ -37,7 +37,7 @@
                          </c:if>
 
                         <form class="form" id="addLocationForm" action="add-location" method="post">
-                            <h4>Add new Location</h4>
+                            <h4 class="text-white">Add new Location</h4>
                             <input type="text" placeholder="Country" name="country">
                             <input type="text" placeholder="State/ Providence" name="region">
                             <input type="text" placeholder="City" name="city">
