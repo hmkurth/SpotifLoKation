@@ -9,6 +9,7 @@ import com.shk.persistence.ArtistDao;
 import com.shk.persistence.LocationDao;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class GetAll {
      *
      * @return the response
      */
+    @Produces("application/json")
     public Response getAll() throws JsonProcessingException {
         ArtistDao artistDao = new ArtistDao();
 
