@@ -20,14 +20,14 @@
                             <form class="form" id="removeLocationForm" action="remove-location" method="post">
 
                                 <h4 class="text-white">Locations</h4>
-                                <ul style="list-style-type:none;">
+
                                 <c:forEach var="location" items="${artist.locations}">
-                                    <li>
+                                    <div>
+                                      <label class="text-white" for="${location.id}"><h5>${location.country}, ${location.region}, ${location.city} </h5></label>
                                       <input class="form-control" type="radio" id="${location.id}" name="location" value="${location.id}">
-                                      <label for="${location.id}"><h5>${location.country}, ${location.region}, ${location.city} </h5></label>
-                                    </li>
+                                    </div>
                                 </c:forEach>
-                                </ul>
+
                             <input type="hidden" name="artistId" value="${artist.id}">
                             <!--
                             <input type="submit" value="remove location" name="removeLocation">
@@ -37,7 +37,7 @@
                          </c:if>
 
                         <form class="form" id="addLocationForm" action="add-location" method="post">
-                            <h4>Add new Location</h4>
+                            <h4 class="text-white">Add new Location</h4>
                             <input type="text" placeholder="Country" name="country">
                             <input type="text" placeholder="State/ Providence" name="region">
                             <input type="text" placeholder="City" name="city">
