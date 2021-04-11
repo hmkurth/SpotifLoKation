@@ -32,16 +32,7 @@
     <jersey-version>2.29.1</jersey-version>
     <jackson-version>2.10.0</jackson-version>
   </properties>
- <!-- for the doc generator plugin -->
-  <pluginRepositories>
-    <pluginRepository>
-      <id>miredot</id>
-      <name>Miredot Releases</name>
-      <url>http://nexus.qmino.com/content/repositories/miredot</url>
-    </pluginRepository>
-  </pluginRepositories>
   <dependencies>
-
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -77,11 +68,6 @@
       <version>${jersey-version}</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.glassfish.jersey.inject</groupId>
-      <artifactId>jersey-hk2</artifactId>
-      <version>${jersey-version}</version>
-    </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>
       <artifactId>jersey-client</artifactId>
