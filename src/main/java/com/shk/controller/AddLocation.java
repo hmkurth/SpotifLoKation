@@ -19,9 +19,22 @@ import java.util.List;
 @WebServlet(
         urlPatterns = {"/add-location"}
 )
+/**
+ * Adds a location to an existing artist
+ */
 public class AddLocation extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * Receives post request from form to add a new artist location to an existing artist.
+     * Checks the entered location for existing location object, or creates a new location object.
+     * Forwards to the editArtist jsp
+     *
+     * @param req request object
+     * @param resp response object
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String country = req.getParameter("country");
