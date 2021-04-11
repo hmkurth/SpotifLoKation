@@ -26,14 +26,11 @@ public class GetAll {
     public Response getAll() throws JsonProcessingException {
         ArtistDao artistDao = new ArtistDao();
 
-        LocationDao locationDao = new LocationDao();
-
         List<Artist> artists = artistDao.getAllArtists();
-        List<Location> locations = locationDao.getAllLocations();
 
         ObjectMapper mapper = new ObjectMapper();
+
         String artistData = mapper.writeValueAsString(artists);
-        String locationData = mapper.writeValueAsString(locations);
-        return Response.status(200).entity(artistData + locationData).build();
+        return Response.status(200).entity(artistData).build();
     }
 }
