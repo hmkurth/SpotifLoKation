@@ -18,9 +18,19 @@ import java.io.IOException;
 @WebServlet(
         urlPatterns = {"/remove-location"}
 )
-
+/**
+ *
+ */
 public class RemoveLocation extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
+
+    /**
+     * Removes an artist's location. Forwards to editArtist
+     * @param req request object
+     * @param resp response object
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String artistId = req.getParameter("artistId");

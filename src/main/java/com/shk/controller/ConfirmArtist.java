@@ -18,9 +18,21 @@ import java.io.IOException;
 @WebServlet(
         urlPatterns = {"/confirm-artist"}
 )
+/**
+ * Responsible for confirming the artist id added, and forwarding artist to editArtist jsp
+ */
 public class ConfirmArtist extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
+
+    /**
+     * Gets user-entered artist id. Attempts to get id from the db first, if not calls retrieveArtist
+     * Forwards artist object and boolean representing if the object is found to edit artist.
+     * @param req request object
+     * @param resp response object
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String idEntered = req.getParameter("spotifyId");
         //logger.info(idEntered);
@@ -46,6 +58,11 @@ public class ConfirmArtist extends HttpServlet {
 
     }
 
+    /**
+     * Fetches a Spotify Artist object and creates a new Artist object.
+     * @param id spotify artist id
+     * @return Artist object
+     */
     public Artist retrieveArtist(String id) {
 
         ArtistDao dao = new ArtistDao();
