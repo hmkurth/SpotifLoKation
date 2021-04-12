@@ -1,11 +1,11 @@
-# DefaultApi
+# Spotiflokation Api
 
 All URIs are relative to *http://18.223.165.204:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**shkTeamProjectServiceAllGet**](DefaultApi.md#shkTeamProjectServiceAllGet) | **GET** /shk-team-project/service/all | 
-[**shkTeamProjectServiceLocationsSpotifyArtistIdGet**](DefaultApi.md#shkTeamProjectServiceLocationsSpotifyArtistIdGet) | **GET** /shk-team-project/service/locations/{spotifyArtistId} | 
+[**shkTeamProjectServiceAllGet**](spotiflokationApi.md#shkTeamProjectServiceAllGet) | **GET** /shk-team-project/service/all | 
+[**shkTeamProjectServiceLocationsSpotifyArtistIdGet**](spotiflokationApi.md#shkTeamProjectServiceLocationsSpotifyArtistIdGet) | **GET** /shk-team-project/service/locations/{spotifyArtistId} | 
 
 <a name="shkTeamProjectServiceAllGet"></a>
 # **shkTeamProjectServiceAllGet**
