@@ -1,0 +1,93 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SpotIfLoKation API Documentation",
+    "description": "The goal is to associate Spotify artists with a geolocation. The current Spotify API does not provide the location for their artist data. This application seeks to crowdsource this information and provide an API service for artist location information.  \n",
+    "contact": {
+      "name": "Heather Kurth",
+      "email": "hmkurth@madisoncollege.edu"
+    },
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "http://18.223.165.204:8080"
+    }
+  ],
+  "paths": {
+    "/shk-team-project/service/all": {
+      "get": {
+        "description": "This method will return all of the artists and their locations from our database",
+        "responses": {
+          "200": {
+            "description": "Everything looks good, here are your results!",
+            "content": {
+              "json/application data": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "0": {
+                    "value": "[{\"id\":\"1f0MVS6tmwuV6j1uwbriC9\",\"artist_name\":\"Heavy Looks\"},{\"id\":\"3KDhIfgNvDwSVflsZR42jD\",\"artist_name\":\"Holly and the Nice Lions\"},{\"id\":\"5L3STwlqP4cN3E9rMWES48\",\"artist_name\":\"Good Grief\"},{\"id\":\"74ASZWbe4lXaubB36ztrGX\",\"artist_name\":\"Bob Dylan\"}][{\"id\":1,\"country\":\"US\",\"region\":\"WI\",\"city\":\"Madison\"},{\"id\":2,\"country\":\"US\",\"region\":\"WI\",\"city\":\"Stevens Point\"},{\"id\":3,\"country\":\"US\",\"region\":\"WI\",\"city\":\"Green Bay\"},{\"id\":4,\"country\":\"United States\",\"region\":\"Wisconsin\",\"city\":\"MADISON\"}]"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://18.223.165.204:8080"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://18.223.165.204:8080"
+        }
+      ]
+    },
+    "/shk-team-project/service/locations/": {
+      "get": {
+        "description": "This method will return the location data for a selected spotify artist id",
+        "parameters": [
+          {
+            "name": "spotifyArtistId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "74ASZWbe4lXaubB36ztrGX"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "text/html;charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://18.223.165.204:8080"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://18.223.165.204:8080"
+        }
+      ]
+    }
+  },
+  "components": {}
+}
