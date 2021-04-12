@@ -18,6 +18,7 @@
 |4/8/2021| deployed new war file, updated tomcat database and seeded, played around with adding images|2|hk|
 |4/9/2021|checking on aws status check failures, trying documentation, updating logs|2|hk|
 |4/9/2021|working on getting documentation from swagger.io|2|hk|
+|4/11/2021|Added tests for service and worked on presentation| 1 | KLH | 
 
 |
 
