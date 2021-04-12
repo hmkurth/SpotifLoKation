@@ -47,15 +47,16 @@
         }
       ]
     },
-    "/shk-team-project/service/locations/": {
+    "/shk-team-project/service/locations/{spotifyArtistId}": {
       "get": {
         "description": "This method will return the location data for a selected spotify artist id",
         "parameters": [
           {
             "name": "spotifyArtistId",
-            "in": "query",
-            "required": false,
-            "style": "form",
+            "in": "path",
+            "description": "the spotify artist id",
+            "required": true,
+            "style": "simple",
             "explode": true,
             "schema": {
               "type": "string"
@@ -64,8 +65,19 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "We found locations for this artist",
+            "content": {
+              "json/application data": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200"
+                },
+                "examples": {}
+              }
+            }
+          },
           "404": {
-            "description": "Auto generated using Swagger Inspector",
+            "description": "We are sorry, there was a problem accessing your request",
             "content": {
               "text/html;charset=utf-8": {
                 "schema": {
@@ -89,5 +101,25 @@
       ]
     }
   },
-  "components": {}
+  "components": {
+    "schemas": {
+      "inline_response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "country": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
 }
