@@ -28,6 +28,11 @@
 |4/9/2021 & 4/10/2021| Troubleshooting, going over final project, looking into error handling for service, and working on presentation | 2 | KLH | 
 |4/9/2021|checking on aws status check failures, trying documentation, updating logs|2|hk|
 |4/9/2021|working on getting documentation from swagger.io|2|hk|
+|4/10/2021| styling, merging resolution, deploy new war|2|hk|
+|4/11/2021|Team meeting|3|all|
+|4/11/2021|redeploying, troubleshooting the problems i caused|3|hk|
+|4/11/2021|working on the openApi json file to produce documentation|3.5|
+|4/11/2021|updating some things for final? deploy on aws| 1| hk |
 |4/11/2021|Group meeting for debugging and reviewing service|2|All|
 |4/11/2021|Added tests for service and worked on presentation| 1 | KLH | 
 
