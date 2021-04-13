@@ -4,8 +4,9 @@ All URIs are relative to *http://18.223.165.204:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**shkTeamProjectServiceAllGet**](spotiflokationApi.md#shkTeamProjectServiceAllGet) | **GET** /shk-team-project/service/all | 
-[**shkTeamProjectServiceLocationsSpotifyArtistIdGet**](spotiflokationApi.md#shkTeamProjectServiceLocationsSpotifyArtistIdGet) | **GET** /shk-team-project/service/locations/{spotifyArtistId} | 
+[**shkTeamProjectServiceAllGet**](spotiflokationApi.md#shkTeamProjectServiceAllGet) | **GET** /shk-team-project/service/all | This method will return all of the artists and their locations from our database. This service call will return a JSON array containing the aritsts spotify Id, name, and, if locations are found for the artist, the country, region, and city.|
+[**shkTeamProjectServiceLocationsSpotifyArtistIdGet**](spotiflokationApi.md#shkTeamProjectServiceLocationsSpotifyArtistIdGet) | **GET** /shk-team-project/service/locations/{spotifyArtistId} | A user must find the artistist's spotify id, and append it on the path /shk-team-project/service/locations/ . The service will verify that the id exists through the spotify api, and if so, return a json array with the location id, the country, the region, and the city.|
+
 
 <a name="shkTeamProjectServiceAllGet"></a>
 # **shkTeamProjectServiceAllGet**
