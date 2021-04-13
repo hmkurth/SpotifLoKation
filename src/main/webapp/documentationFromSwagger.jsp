@@ -197,7 +197,7 @@
 <h4><a href="#Default">Default</a></h4>
 <ul>
     <li><a href="#shkTeamProjectServiceAllGet"><code><span class="http-method">get</span> /shk-team-project/service/all</code></a></li>
-    <li><a href="#shkTeamProjectServiceLocationsGet"><code><span class="http-method">get</span> /shk-team-project/service/locations/</code></a></li>
+    <li><a href="#shkTeamProjectServiceLocationsSpotifyArtistIdGet"><code><span class="http-method">get</span> /shk-team-project/service/locations/{spotifyArtistId}</code></a></li>
 </ul>
 
 <h1><a name="Default">Default</a></h1>
@@ -242,38 +242,55 @@
     <pre class="example"><code>[{&quot;id&quot;:&quot;1f0MVS6tmwuV6j1uwbriC9&quot;,&quot;artist_name&quot;:&quot;Heavy Looks&quot;},{&quot;id&quot;:&quot;3KDhIfgNvDwSVflsZR42jD&quot;,&quot;artist_name&quot;:&quot;Holly and the Nice Lions&quot;},{&quot;id&quot;:&quot;5L3STwlqP4cN3E9rMWES48&quot;,&quot;artist_name&quot;:&quot;Good Grief&quot;},{&quot;id&quot;:&quot;74ASZWbe4lXaubB36ztrGX&quot;,&quot;artist_name&quot;:&quot;Bob Dylan&quot;}][{&quot;id&quot;:1,&quot;country&quot;:&quot;US&quot;,&quot;region&quot;:&quot;WI&quot;,&quot;city&quot;:&quot;Madison&quot;},{&quot;id&quot;:2,&quot;country&quot;:&quot;US&quot;,&quot;region&quot;:&quot;WI&quot;,&quot;city&quot;:&quot;Stevens Point&quot;},{&quot;id&quot;:3,&quot;country&quot;:&quot;US&quot;,&quot;region&quot;:&quot;WI&quot;,&quot;city&quot;:&quot;Green Bay&quot;},{&quot;id&quot;:4,&quot;country&quot;:&quot;United States&quot;,&quot;region&quot;:&quot;Wisconsin&quot;,&quot;city&quot;:&quot;MADISON&quot;}]</code></pre>
 </div> <!-- method -->
 <hr/>
-<div class="method"><a name="shkTeamProjectServiceLocationsGet"></a>
+<div class="method"><a name="shkTeamProjectServiceLocationsSpotifyArtistIdGet"></a>
     <div class="method-path">
         <a class="up" href="#__Methods">Up</a>
-        <pre class="get"><code class="huge"><span class="http-method">get</span> /shk-team-project/service/locations/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">shkTeamProjectServiceLocationsGet</span>)</div>
+        <pre class="get"><code class="huge"><span class="http-method">get</span> /shk-team-project/service/locations/{spotifyArtistId}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">shkTeamProjectServiceLocationsSpotifyArtistIdGet</span>)</div>
     <div class="method-notes">This method will return the location data for a selected spotify artist id</div>
 
-
-
-
-
-    <h3 class="field-label">Query parameters</h3>
+    <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
-        <div class="param">spotifyArtistId (optional)</div>
+        <div class="param">spotifyArtistId (required)</div>
 
-        <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+        <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; the spotify artist id </div>    </div>  <!-- field-items -->
 
 
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+        <a href="#inline_response_200">inline_response_200</a>
+
+    </div>
 
     <!--Todo: process Response Object and its headers, schema, examples -->
 
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "country" : "country",
+  "city" : "city",
+  "id" : 0,
+  "region" : "region"
+}</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
     the media type will be conveyed by the <span class="header">Content-Type</span> response header.
     <ul>
+        <li><code>json/application data</code></li>
         <li><code>text/html;charset=utf-8</code></li>
     </ul>
 
     <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    We found locations for this artist
+    <a href="#inline_response_200">inline_response_200</a>
     <h4 class="field-label">404</h4>
-    Auto generated using Swagger Inspector
+    We are sorry, there was a problem accessing your request
     <a href="#String">String</a>
 </div> <!-- method -->
 <hr/>
@@ -283,7 +300,18 @@
 
 <h3>Table of Contents</h3>
 <ol>
+    <li><a href="#inline_response_200"><code>inline_response_200</code></a></li>
 </ol>
 
+<div class="model">
+    <h3><a name="inline_response_200"><code>inline_response_200</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+        <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+        <div class="param">country (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+        <div class="param">region (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+        <div class="param">city (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+</div>
 </body>
 </html>

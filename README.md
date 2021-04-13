@@ -42,7 +42,7 @@ MVP:
 | 1 | Set Git Repo| SL | {git location here} | Y |
 | 1 | Main Package Dir./ Local deployment | HK | | Y |
 | 1 | Local MySQL Db Set Up | HK | Commit script in project folder | y|
-| 1 | Configure Hibernate | HK | hibernate.cfg.xml added to main and test| |
+| 1 | Configure Hibernate | HK | hibernate.cfg.xml added to main and test| y|
 | 1 | DAO | KH | | Y|
 | 1 | Entities | KH | |Y|
 | 1 | Tests - CRUD | SL | | Y|
@@ -51,9 +51,8 @@ MVP:
 | 2 | REST Service - Hard Coded | KH | | y|
 | 2 | REST Service - Live Data | KH | | y|
 | 2 | Deploy to AWS | HK | Wait on application flow | y|
-| 3 | Error handling - front end | SL | | |
-| 3 | Error handling - service | SL | | | 
-| 3 | Bootstrap / CSS styling |hk| | |
-| 3 | Project Documentation | | | i (HK)have done some looking into this... Swagger IO|
+| 3 | Error handling - front end | SL | | y|
+| 3 | Bootstrap / CSS styling |hk| | y|
+| 3 | Project Documentation | hk | i (HK)have done some looking into this... Swagger IO| y|
 | 3 | Presentation Prep | ALL | | |
 

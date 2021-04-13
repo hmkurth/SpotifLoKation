@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.jsp#addArtist">Add Artist Location</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://app.swaggerhub.com/apis/shk-team-project/SpotIfLoKation/0.1">Documentation</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://app.swaggerhub.com/apis/shk-team-project/SpotIfLoKation/0.1">Documentation on Swaggerhub</a></li>
             </ul>
         </div>
     </div>
