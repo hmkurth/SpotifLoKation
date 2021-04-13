@@ -22,4 +22,7 @@
 |4/11/2021|Team meeting|3|all|
 |4/11/2021|redeploying, troubleshooting the problems i caused|3|hk|
 |4/11/2021|working on the openApi json file to produce documentation|3.5|
-|4/11/2021|updating some things for final? deploy on aws| 1|
+|4/11/2021|updating some things for final? deploy on aws| 1| hk |
+|4/11/2021|Added tests for service and worked on presentation| 1 | KLH | 
+
+
